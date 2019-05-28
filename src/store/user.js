@@ -5,7 +5,9 @@ const initState={
     name:'',login: false
 }
 
-export const login = newname=> {
+export const login = newname=> {console.log(newname);
+    localStorage.setItem('token','loggedin')
+    localStorage.setItem('username','hactiv8')
     return {
         name: newname,
         type: LOGIN,

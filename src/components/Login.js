@@ -17,7 +17,7 @@ const submitForm = (e, login) => {
 
     if (username === 'hactiv8' && password === '1234') {
         login(username)
-        window.location = "/";
+        window.location = "/logged";
 
     } else {
         alert('username dan password salah')
@@ -38,7 +38,7 @@ export const Login = (props) => {
                                 <input type='text' 
                                     className='form-control' 
                                     name='username' 
-                                    placeholder='Input username'
+                                    placeholder='username'
                                     ref={usernameRef} />
                             </div>
                             <div className='form-group'>
@@ -46,10 +46,13 @@ export const Login = (props) => {
                                     type='password' 
                                     className='form-control' 
                                     name='password' 
-                                    placeholder='Input password'
+                                    placeholder='password'
                                     ref={passwordRef} />
                             </div>
+                            <div className="form-group">
+                                </div>
                             <div className='form-group'>
+                                Hint: hactiv8 - 1234<br/>
                                 <button className="btn btn-info" type='submit'>Login</button>
                             </div>
                         </form>

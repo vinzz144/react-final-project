@@ -19,6 +19,9 @@ class Navbar extends React.Component {
     };
 
     render() {
+     //console.log(localStorage.getItem('token'))
+
+
       return (
 <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
   <Link className="navbar-brand" to="/">KW <span className="logo-red">TUBE</span></Link>
@@ -28,8 +31,26 @@ class Navbar extends React.Component {
 
   <div className="collapse navbar-collapse" id="navbarSupportedContent">
     <ul className="navbar-nav mr-auto">
+        
       <li className="nav-item">
+        {
+            (localStorage.getItem('token')=='loggedin')?  
+            <a className="nav-link" href="#">{localStorage.getItem('username')}</a>
+            :''
+        }
+      </li>
+
+      <li className="nav-item">
+        {
+            (localStorage.getItem('token')=='loggedin')?  
+            <a className="nav-link" href="#" onClick={()=>{
+              localStorage.removeItem('token');
+              localStorage.removeItem('username');
+              window.location = "/login";
+          }}>Logout</a>
+            :
         <Link className="nav-link" to="/login">Login</Link>
+        }
       </li>
       
       
