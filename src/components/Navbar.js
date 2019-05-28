@@ -32,6 +32,7 @@ class Navbar extends React.Component {
         <Link className="nav-link" to="/login">Login</Link>
       </li>
       
+      
     </ul>
     <form className="form-inline my-2 my-lg-0 " action="/" method="get">
       <input className="form-control mr-sm-2 bg-dark search-bar" name="q" type="search" placeholder="Search" aria-label="Search" onChange={this.onInputChange} value={this.state.keyword} />

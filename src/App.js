@@ -9,6 +9,8 @@ import { BrowserRouter as Router, Route, Redirect }  from 'react-router-dom';
 
 import Login from './components/Login';
 import History from './components/History';
+import store from './store'
+import {Provider} from 'react-redux';
 
 class App extends React.Component {
   
@@ -51,9 +53,10 @@ class App extends React.Component {
   
   render(){
     return (      
+      <Provider store={store}>
       <Router>
         <div className="App">
-          <Navbar onFormSubmit={this.onFormSubmit} />
+          <Navbar />
           <div className="container">
             <Route exact path='/' render={() => (
               <Content videos={this.state.videos} />
@@ -64,6 +67,7 @@ class App extends React.Component {
           </div>
         </div>      
       </Router>
+      </Provider>
     );
   }
 }

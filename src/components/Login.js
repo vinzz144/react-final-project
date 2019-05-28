@@ -1,7 +1,8 @@
 import React from 'react'
-// import { connect } from 'react-redux'
-// import { login } from '../store/user'
+import { connect } from 'react-redux'
+import { login } from '../store/user'
 import { Link } from 'react-router-dom'
+import {browserHistory} from "react-router";
 
 const usernameRef = React.createRef()
 const passwordRef = React.createRef()
@@ -16,8 +17,8 @@ const submitForm = (e, login) => {
 
     if (username === 'hactiv8' && password === '1234') {
         login(username)
+        window.location = "/";
 
-        window.location('/')
     } else {
         alert('username dan password salah')
     }
@@ -63,10 +64,10 @@ export const Login = (props) => {
     )
 }
 
-// const mapDispatchToProps = dispatch => {
-//     return {
-//         login: () => dispatch(login())
-//     }
-// }
-export default Login;
-// export default connect(null, mapDispatchToProps)(Login)
+const mapDispatchToProps = dispatch => {
+    return {
+        login: () => dispatch(login())
+    }
+}
+// export default Login;
+export default connect(null, mapDispatchToProps)(Login)
