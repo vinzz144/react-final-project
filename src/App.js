@@ -56,14 +56,10 @@ class App extends React.Component {
           <Navbar onFormSubmit={this.onFormSubmit} />
           <div className="container">
             <Route exact path='/' render={() => (
-              <Content onVideoSelect={this.onVideoSelect} videos={this.state.videos} />
+              <Content videos={this.state.videos} />
             )} />
             <Route path='/login' component={Login} />
-            <Route path='/history' component={History} />        
-            {/* <Route exact path='/video/detail/:videoid' render={(routeProps) => (
-              <VideoDetail  />
-            )} /> */}
-
+            <Route path='/history' component={History} />       
             <Route exact path='/video/detail/:videoid' component={VideoDetail} />
           </div>
         </div>      

@@ -5,7 +5,7 @@ import VideoItem from './VideoItem';
 const Content = ({ videos, onVideoSelect }) => {
   // Mapping dari JSON API Youtube
   const renderedList = videos.map((video, index) => {
-    return <VideoItem key={index} onVideoSelect={onVideoSelect} video={video} />;
+    return <VideoItem key={index} video={video} />;
 	});
 	
   return (
