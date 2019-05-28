@@ -1,0 +1,11 @@
+.video-title a, .video-title a:hover{
+    color: black; 
+    overflow: hidden;
+    height: 50px;
+    display: block;
+}
+
+.video-maker{
+    color: #999999;
+
+}

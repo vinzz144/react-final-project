@@ -1,0 +1,11 @@
+
+.logo-red{
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    padding: 0 5px;
+  }
+
+  input.search-bar, input.search-bar:focus{
+      color: white;
+  }
